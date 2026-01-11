@@ -1,0 +1,8 @@
+version: "3.9"
+
+services:
+  cloud-gateway-service:
+    image: evanellenstore/cloud-gateway-service:latest
+    container_name: cloud-gateway-service
+    ports:
+      - "9090:9090"
