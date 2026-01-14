@@ -1,6 +1,8 @@
 spring:
   application:
     name: cloud-gateway-service
+  profiles:
+    active: local
 
-  config:
-    import: optional:${CONFIG_SERVER_URL:configserver:http://localhost:8850}
+server:
+  port: 9090

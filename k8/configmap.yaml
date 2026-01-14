@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cloud-gateway-config
+  namespace: store
+data:
+  application-k8s.yml: |
+    spring:
+      cloud:
+        gateway:
+          routes:
+            - id: inventory-service
+              uri: http://inventory-service:2011
+              predicates:
+                - Path=/inventory/**
+
+            - id: library-mvc-project
+              uri: http://library-mvc-project:2010
+              predicates:
+                - Path=/library/**

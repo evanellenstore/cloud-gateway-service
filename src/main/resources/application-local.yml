@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: inventory-service
+          uri: http://localhost:2011
+          predicates:
+            - Path=/inventory/**
+
+        - id: library-mvc-project
+          uri: http://localhost:2010
+          predicates:
+            - Path=/library/**
