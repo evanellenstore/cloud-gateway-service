@@ -1,0 +1,23 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: inventory-service
+          uri: http://inventory-service
+          predicates:
+            - Path=/inventory/**
+          filters:
+            # VERY IMPORTANT: avoids /inventory/inventory issue
+            - RewritePath=/inventory/(?<segment>.*), /${segment}
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.web.reactive.DispatcherHandler: DEBUG
+    reactor.netty.http.client: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: gateway,health,info
