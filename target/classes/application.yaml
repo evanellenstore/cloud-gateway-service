@@ -21,12 +21,12 @@ spring:
         - id: purchase-service
           uri: http://localhost:2021
           predicates:
-            - Path=/purchase/**
+            - Path=/purchases/**
 
         - id: billing-service
           uri: http://localhost:2013
           predicates:
-            - Path=/billing/**
+            - Path=/billings/**
 
         - id: reporting-service
           uri: http://localhost:2024
