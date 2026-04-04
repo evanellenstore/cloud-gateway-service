@@ -43,6 +43,7 @@ public Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain) {
         return chain.filter(exchange);
     }
 
+    // Allow /customers endpoints with valid JWT token
     String authHeader = exchange.getRequest()
             .getHeaders()
             .getFirst(HttpHeaders.AUTHORIZATION);
