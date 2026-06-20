@@ -48,6 +48,11 @@ spring:
           predicates:
             - Path=/users/**
 
+        - id: ai-service
+          uri: http://localhost:2050
+          predicates:
+            - Path=/ai/**            
+
 auth:
   service:
     url: http://localhost:2040             
