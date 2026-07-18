@@ -1,3 +1,4 @@
+package com.retail;
 /* package com.stroe;
 
 import org.junit.jupiter.api.Test;

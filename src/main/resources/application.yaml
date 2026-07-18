@@ -1,5 +1,5 @@
 server:
-  port: 9090
+  port: 5051
 
 spring:
   application:
@@ -9,53 +9,39 @@ spring:
     gateway:
       routes:
         - id: auth-service
-          uri: http://localhost:2040
+          uri: http://localhost:5052
           predicates:
             - Path=/auth/**
 
-        - id: inventory-service
-          uri: http://localhost:2011
+        - id: tenant-user-service
+          uri: http://localhost:5053
           predicates:
-            - Path=/inventory/**
+            - Path=/tenants/**
 
-        - id: purchase-service
-          uri: http://localhost:2021
+        - id: document-service
+          uri: http://localhost:5054
           predicates:
-            - Path=/purchases/**
+            - Path=/documents/**
 
-        - id: billing-service
-          uri: http://localhost:2013
+        - id: vector-service
+          uri: http://localhost:5055
           predicates:
-            - Path=/billings/**
+            - Path=/vectors/**
 
-        - id: reporting-service
-          uri: http://localhost:2024
+        - id: ai-transformation-service
+          uri: http://localhost:5056
           predicates:
-            - Path=/report/**
+            - Path=/ai/**
 
-        - id: product-service
-          uri: http://localhost:2014
+        - id: transaction-service
+          uri: http://localhost:5057
           predicates:
-            - Path=/products/**
-
-        - id: notification-service
-          uri: http://localhost:2020
-          predicates:
-            - Path=/notification/**
-
-        - id: user-service
-          uri: http://localhost:2030
-          predicates:
-            - Path=/users/**
-
-        - id: ai-service
-          uri: http://localhost:2050
-          predicates:
-            - Path=/ai/**            
+            - Path=/transaction/**
+           
 
 auth:
   service:
-    url: http://localhost:2040             
+    url: http://localhost:5052             
 
 jwt:
   secret: 9Jt1c7zP6QwV8Lr5xC6vK0Z4E2m7R8H9nFJ3S5aQ2Wk=

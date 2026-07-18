@@ -1,4 +1,4 @@
-package com.stroe.config;
+package com.retail.config;
 import java.util.List;
 
 import org.springframework.context.annotation.Bean;

@@ -1,4 +1,4 @@
-package com.stroe.dto;
+package com.retail.dto;
 
 import java.util.List;
 
