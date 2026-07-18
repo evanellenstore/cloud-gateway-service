@@ -1,4 +1,4 @@
-package com.retail.util;
+package com.store.util;
 
 import java.security.Key;
 

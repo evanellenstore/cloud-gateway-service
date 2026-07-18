@@ -1,4 +1,4 @@
-package com.retail.config;
+package com.store.config;
 import java.util.List;
 
 import org.springframework.context.annotation.Bean;

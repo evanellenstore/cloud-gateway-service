@@ -1,4 +1,4 @@
-package com.retail.filter;
+package com.store.filter;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.Ordered;
@@ -13,7 +13,7 @@ import org.springframework.web.server.ServerWebExchange;
 import org.springframework.web.server.WebFilter;
 import org.springframework.web.server.WebFilterChain;
 
-import com.retail.dto.AuthValidationResponse;
+import com.store.dto.AuthValidationResponse;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -39,7 +39,7 @@ public Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain) {
 
     String path = exchange.getRequest().getURI().getPath();
 
-    if (path.startsWith("/auth") || path.startsWith("/tenants") || path.startsWith("/users")) {
+    if (path.startsWith("/auth")) {
         return chain.filter(exchange);
     }
 
